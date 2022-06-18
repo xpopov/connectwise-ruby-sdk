@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/sowderca/connectwise-ruby-sdk"
   s.summary     = "ConnectWise Ruby Gem"
   s.description = "Ruby gem for interacting with ConnectWise's REST API"
-  s.license     = "Apache 2.0"
+  s.license     = "Apache-2.0"
   s.required_ruby_version = ">= 1.9"
 
   s.add_runtime_dependency 'typhoeus', '~> 1.0', '>= 1.0.1'
