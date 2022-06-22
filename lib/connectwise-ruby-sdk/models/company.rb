@@ -14,6 +14,8 @@ module ConnectWise
 
     attr_accessor :type
 
+    attr_accessor :site
+
     # At least one address field is required -- addressLine1, addressLine2, city, state, zip and/or country
     attr_accessor :address_line1
 
@@ -149,6 +151,7 @@ module ConnectWise
         :'name' => :'name',
         :'status' => :'status',
         :'type' => :'type',
+        :'site' => :'site',
         :'address_line1' => :'addressLine1',
         :'address_line2' => :'addressLine2',
         :'city' => :'city',
@@ -218,6 +221,7 @@ module ConnectWise
         :'name' => :'String',
         :'status' => :'CompanyStatusReference',
         :'type' => :'CompanyTypeReference',
+        :'site' => :'SiteReference',
         :'address_line1' => :'String',
         :'address_line2' => :'String',
         :'city' => :'String',
@@ -305,6 +309,10 @@ module ConnectWise
 
       if attributes.has_key?(:'type')
         self.type = attributes[:'type']
+      end
+
+      if attributes.has_key?(:'site')
+        self.site = attributes[:'site']
       end
 
       if attributes.has_key?(:'addressLine1')
@@ -950,6 +958,7 @@ module ConnectWise
           name == o.name &&
           status == o.status &&
           type == o.type &&
+          site == o.site &&
           address_line1 == o.address_line1 &&
           address_line2 == o.address_line2 &&
           city == o.city &&
@@ -1019,7 +1028,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, identifier, name, status, type, address_line1, address_line2, city, state, zip, country, phone_number, fax_number, website, territory, market_id, account_number, default_contact, date_acquired, sic_code, parent_company, annual_revenue, number_of_employees, ownership_type, time_zone, lead_source, lead_flag, unsubscribe_flag, calendar_id, user_defined_field1, user_defined_field2, user_defined_field3, user_defined_field4, user_defined_field5, user_defined_field6, user_defined_field7, user_defined_field8, user_defined_field9, user_defined_field10, vendor_identifier, tax_identifier, tax_code, billing_terms, invoice_template, pricing_schedule, company_entity_type, bill_to_company, billing_site, billing_contact, invoice_delivery_method, invoice_to_email_address, invoice_cc_email_address, deleted_flag, date_deleted, deleted_by, mobile_guid, facebook_url, twitter_url, linked_in_url, currency, territory_manager, _info, custom_fields].hash
+      [id, identifier, name, status, type, site, address_line1, address_line2, city, state, zip, country, phone_number, fax_number, website, territory, market_id, account_number, default_contact, date_acquired, sic_code, parent_company, annual_revenue, number_of_employees, ownership_type, time_zone, lead_source, lead_flag, unsubscribe_flag, calendar_id, user_defined_field1, user_defined_field2, user_defined_field3, user_defined_field4, user_defined_field5, user_defined_field6, user_defined_field7, user_defined_field8, user_defined_field9, user_defined_field10, vendor_identifier, tax_identifier, tax_code, billing_terms, invoice_template, pricing_schedule, company_entity_type, bill_to_company, billing_site, billing_contact, invoice_delivery_method, invoice_to_email_address, invoice_cc_email_address, deleted_flag, date_deleted, deleted_by, mobile_guid, facebook_url, twitter_url, linked_in_url, currency, territory_manager, _info, custom_fields].hash
     end
 
     # Builds the object from hash
