@@ -311,14 +311,14 @@ module ConnectWise
 
     # Custom attribute writer method with validation
     # @param [Object] state Value to be assigned
-    def state=(state)
+    # def state=(state)
 
-      if !state.nil? && state.to_s.length > 50
-        fail ArgumentError, "invalid value for 'state', the character length must be smaller than or equal to 50."
-      end
+    #   if !state.nil? && state.to_s.length > 50
+    #     fail ArgumentError, "invalid value for 'state', the character length must be smaller than or equal to 50."
+    #   end
 
-      @state = state
-    end
+    #   @state = state
+    # end
 
     # Custom attribute writer method with validation
     # @param [Object] zip Value to be assigned
