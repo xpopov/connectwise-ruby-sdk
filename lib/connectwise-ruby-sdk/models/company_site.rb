@@ -58,7 +58,7 @@ module ConnectWise
         :'address_line1' => :'addressLine1',
         :'address_line2' => :'addressLine2',
         :'city' => :'city',
-        :'state' => :'state',
+        :'state' => :'stateReference',
         :'zip' => :'zip',
         :'country' => :'country',
         :'address_format' => :'addressFormat',
@@ -86,7 +86,7 @@ module ConnectWise
         :'address_line1' => :'String',
         :'address_line2' => :'String',
         :'city' => :'String',
-        :'state' => :'String',
+        :'state' => :'StateReference',
         :'zip' => :'String',
         :'country' => :'CountryReference',
         :'address_format' => :'String',
@@ -134,8 +134,8 @@ module ConnectWise
         self.city = attributes[:'city']
       end
 
-      if attributes.has_key?(:'state')
-        self.state = attributes[:'state']
+      if attributes.has_key?(:'stateReference')
+        self.state = attributes[:'stateReference']
       end
 
       if attributes.has_key?(:'zip')
