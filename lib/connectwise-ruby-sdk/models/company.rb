@@ -12,7 +12,7 @@ module ConnectWise
 
     attr_accessor :status
 
-    attr_accessor :type
+    attr_accessor :types
 
     attr_accessor :site
 
@@ -150,7 +150,7 @@ module ConnectWise
         :'identifier' => :'identifier',
         :'name' => :'name',
         :'status' => :'status',
-        :'type' => :'type',
+        :'types' => :'types',
         :'site' => :'site',
         :'address_line1' => :'addressLine1',
         :'address_line2' => :'addressLine2',
@@ -220,7 +220,7 @@ module ConnectWise
         :'identifier' => :'String',
         :'name' => :'String',
         :'status' => :'CompanyStatusReference',
-        :'type' => :'CompanyTypeReference',
+        :'types' => :'Array<CompanyTypeReference>',
         :'site' => :'SiteReference',
         :'address_line1' => :'String',
         :'address_line2' => :'String',
@@ -307,8 +307,8 @@ module ConnectWise
         self.status = attributes[:'status']
       end
 
-      if attributes.has_key?(:'type')
-        self.type = attributes[:'type']
+      if attributes.has_key?(:'types')
+        self.types = attributes[:'types']
       end
 
       if attributes.has_key?(:'site')
@@ -957,7 +957,7 @@ module ConnectWise
           identifier == o.identifier &&
           name == o.name &&
           status == o.status &&
-          type == o.type &&
+          types == o.types &&
           site == o.site &&
           address_line1 == o.address_line1 &&
           address_line2 == o.address_line2 &&
@@ -1028,7 +1028,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, identifier, name, status, type, site, address_line1, address_line2, city, state, zip, country, phone_number, fax_number, website, territory, market_id, account_number, default_contact, date_acquired, sic_code, parent_company, annual_revenue, number_of_employees, ownership_type, time_zone, lead_source, lead_flag, unsubscribe_flag, calendar_id, user_defined_field1, user_defined_field2, user_defined_field3, user_defined_field4, user_defined_field5, user_defined_field6, user_defined_field7, user_defined_field8, user_defined_field9, user_defined_field10, vendor_identifier, tax_identifier, tax_code, billing_terms, invoice_template, pricing_schedule, company_entity_type, bill_to_company, billing_site, billing_contact, invoice_delivery_method, invoice_to_email_address, invoice_cc_email_address, deleted_flag, date_deleted, deleted_by, mobile_guid, facebook_url, twitter_url, linked_in_url, currency, territory_manager, _info, custom_fields].hash
+      [id, identifier, name, status, types, site, address_line1, address_line2, city, state, zip, country, phone_number, fax_number, website, territory, market_id, account_number, default_contact, date_acquired, sic_code, parent_company, annual_revenue, number_of_employees, ownership_type, time_zone, lead_source, lead_flag, unsubscribe_flag, calendar_id, user_defined_field1, user_defined_field2, user_defined_field3, user_defined_field4, user_defined_field5, user_defined_field6, user_defined_field7, user_defined_field8, user_defined_field9, user_defined_field10, vendor_identifier, tax_identifier, tax_code, billing_terms, invoice_template, pricing_schedule, company_entity_type, bill_to_company, billing_site, billing_contact, invoice_delivery_method, invoice_to_email_address, invoice_cc_email_address, deleted_flag, date_deleted, deleted_by, mobile_guid, facebook_url, twitter_url, linked_in_url, currency, territory_manager, _info, custom_fields].hash
     end
 
     # Builds the object from hash
