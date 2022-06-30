@@ -400,7 +400,7 @@ module ConnectWise
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Array<Order>')
+        :return_type => 'Order')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrdersApi#sales_orders_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
