@@ -34,6 +34,8 @@ module ConnectWise
 
     attr_accessor :location_id
 
+    attr_accessor :department
+
     attr_accessor :business_unit_id
 
     attr_accessor :sales_rep
@@ -81,6 +83,8 @@ module ConnectWise
     # Metadata of the entity
     attr_accessor :_info
 
+    attr_accessor :custom_fields
+
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -100,6 +104,7 @@ module ConnectWise
         :'tax_code' => :'taxCode',
         :'po_number' => :'poNumber',
         :'location_id' => :'locationId',
+        :'department' => :'department',
         :'business_unit_id' => :'businessUnitId',
         :'sales_rep' => :'salesRep',
         :'notes' => :'notes',
@@ -122,7 +127,8 @@ module ConnectWise
         :'total' => :'total',
         :'tax_total' => :'taxTotal',
         :'currency' => :'currency',
-        :'_info' => :'_info'
+        :'_info' => :'_info',
+        :'custom_fields' => :'customFields'
       }
     end
 
@@ -144,6 +150,7 @@ module ConnectWise
         :'tax_code' => :'TaxCodeReference',
         :'po_number' => :'String',
         :'location_id' => :'Integer',
+        :'department' => :'ContactDepartmentReference',
         :'business_unit_id' => :'Integer',
         :'sales_rep' => :'MemberReference',
         :'notes' => :'String',
@@ -166,7 +173,8 @@ module ConnectWise
         :'total' => :'Float',
         :'tax_total' => :'Float',
         :'currency' => :'CurrencyReference',
-        :'_info' => :'Metadata'
+        :'_info' => :'Metadata',
+        :'custom_fields' => :'Array<CustomFieldValue>'
       }
     end
 
@@ -236,6 +244,10 @@ module ConnectWise
 
       if attributes.has_key?(:'locationId')
         self.location_id = attributes[:'locationId']
+      end
+
+      if attributes.has_key?(:'department')
+        self.department = attributes[:'department']
       end
 
       if attributes.has_key?(:'businessUnitId')
@@ -338,6 +350,11 @@ module ConnectWise
         self._info = attributes[:'_info']
       end
 
+      if attributes.has_key?(:'customFields')
+        if (value = attributes[:'customFields']).is_a?(Array)
+          self.custom_fields = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -426,7 +443,8 @@ module ConnectWise
           total == o.total &&
           tax_total == o.tax_total &&
           currency == o.currency &&
-          _info == o._info
+          _info == o._info &&
+          custom_fields == o.custom_fields
     end
 
     # @see the `==` method
@@ -438,7 +456,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, company, contact, phone, phone_ext, email, site, status, opportunity, order_date, due_date, billing_terms, tax_code, po_number, location_id, business_unit_id, sales_rep, notes, bill_closed_flag, bill_shipped_flag, restrict_downpayment_flag, description, top_comment_flag, bottom_comment_flag, ship_to_company, ship_to_contact, ship_to_site, bill_to_company, bill_to_contact, bill_to_site, product_ids, document_ids, invoice_ids, config_ids, total, tax_total, currency, _info].hash
+      [id, company, contact, phone, phone_ext, email, site, status, opportunity, order_date, due_date, billing_terms, tax_code, po_number, location_id, business_unit_id, sales_rep, notes, bill_closed_flag, bill_shipped_flag, restrict_downpayment_flag, description, top_comment_flag, bottom_comment_flag, ship_to_company, ship_to_contact, ship_to_site, bill_to_company, bill_to_contact, bill_to_site, product_ids, document_ids, invoice_ids, config_ids, total, tax_total, currency, _info, custom_fields].hash
     end
 
     # Builds the object from hash
