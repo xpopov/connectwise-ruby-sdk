@@ -34,6 +34,8 @@ module ConnectWise
 
     attr_accessor :location_id
 
+    attr_accessor :default_location
+
     attr_accessor :department
 
     attr_accessor :business_unit_id
@@ -104,6 +106,7 @@ module ConnectWise
         :'tax_code' => :'taxCode',
         :'po_number' => :'poNumber',
         :'location_id' => :'locationId',
+        :'default_location' => :'defaultLocation',
         :'department' => :'department',
         :'business_unit_id' => :'businessUnitId',
         :'sales_rep' => :'salesRep',
@@ -150,6 +153,7 @@ module ConnectWise
         :'tax_code' => :'TaxCodeReference',
         :'po_number' => :'String',
         :'location_id' => :'Integer',
+        :'default_location' => :'SystemLocationReference',
         :'department' => :'ContactDepartmentReference',
         :'business_unit_id' => :'Integer',
         :'sales_rep' => :'MemberReference',
@@ -244,6 +248,10 @@ module ConnectWise
 
       if attributes.has_key?(:'locationId')
         self.location_id = attributes[:'locationId']
+      end
+
+      if attributes.has_key?(:'defaultLocation')
+        self.default_location = attributes[:'defaultLocation']
       end
 
       if attributes.has_key?(:'department')
@@ -421,6 +429,8 @@ module ConnectWise
           tax_code == o.tax_code &&
           po_number == o.po_number &&
           location_id == o.location_id &&
+          default_location == o.default_location &&
+          department == o.department &&
           business_unit_id == o.business_unit_id &&
           sales_rep == o.sales_rep &&
           notes == o.notes &&
@@ -456,7 +466,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, company, contact, phone, phone_ext, email, site, status, opportunity, order_date, due_date, billing_terms, tax_code, po_number, location_id, business_unit_id, sales_rep, notes, bill_closed_flag, bill_shipped_flag, restrict_downpayment_flag, description, top_comment_flag, bottom_comment_flag, ship_to_company, ship_to_contact, ship_to_site, bill_to_company, bill_to_contact, bill_to_site, product_ids, document_ids, invoice_ids, config_ids, total, tax_total, currency, _info, custom_fields].hash
+      [id, company, contact, phone, phone_ext, email, site, status, opportunity, order_date, due_date, billing_terms, tax_code, po_number, location_id, default_location, department, business_unit_id, sales_rep, notes, bill_closed_flag, bill_shipped_flag, restrict_downpayment_flag, description, top_comment_flag, bottom_comment_flag, ship_to_company, ship_to_contact, ship_to_site, bill_to_company, bill_to_contact, bill_to_site, product_ids, document_ids, invoice_ids, config_ids, total, tax_total, currency, _info, custom_fields].hash
     end
 
     # Builds the object from hash
