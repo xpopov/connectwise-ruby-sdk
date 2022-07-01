@@ -32,9 +32,9 @@ module ConnectWise
 
     attr_accessor :po_number
 
-    attr_accessor :location_id
+    # attr_accessor :location_id
 
-    attr_accessor :default_location
+    attr_accessor :location
 
     attr_accessor :department
 
@@ -105,8 +105,8 @@ module ConnectWise
         :'billing_terms' => :'billingTerms',
         :'tax_code' => :'taxCode',
         :'po_number' => :'poNumber',
-        :'location_id' => :'locationId',
-        :'default_location' => :'defaultLocation',
+        # :'location_id' => :'locationId',
+        :'location' => :'location',
         :'department' => :'department',
         :'business_unit_id' => :'businessUnitId',
         :'sales_rep' => :'salesRep',
@@ -152,8 +152,8 @@ module ConnectWise
         :'billing_terms' => :'BillingTermsReference',
         :'tax_code' => :'TaxCodeReference',
         :'po_number' => :'String',
-        :'location_id' => :'Integer',
-        :'default_location' => :'SystemLocationReference',
+        # :'location_id' => :'Integer',
+        :'location' => :'SystemLocationReference',
         :'department' => :'ContactDepartmentReference',
         :'business_unit_id' => :'Integer',
         :'sales_rep' => :'MemberReference',
@@ -246,12 +246,12 @@ module ConnectWise
         self.po_number = attributes[:'poNumber']
       end
 
-      if attributes.has_key?(:'locationId')
-        self.location_id = attributes[:'locationId']
-      end
+      # if attributes.has_key?(:'locationId')
+      #   self.location_id = attributes[:'locationId']
+      # end
 
-      if attributes.has_key?(:'defaultLocation')
-        self.default_location = attributes[:'defaultLocation']
+      if attributes.has_key?(:'location')
+        self.location = attributes[:'location']
       end
 
       if attributes.has_key?(:'department')
@@ -428,8 +428,8 @@ module ConnectWise
           billing_terms == o.billing_terms &&
           tax_code == o.tax_code &&
           po_number == o.po_number &&
-          location_id == o.location_id &&
-          default_location == o.default_location &&
+          # location_id == o.location_id &&
+          location == o.location &&
           department == o.department &&
           business_unit_id == o.business_unit_id &&
           sales_rep == o.sales_rep &&
@@ -466,7 +466,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, company, contact, phone, phone_ext, email, site, status, opportunity, order_date, due_date, billing_terms, tax_code, po_number, location_id, default_location, department, business_unit_id, sales_rep, notes, bill_closed_flag, bill_shipped_flag, restrict_downpayment_flag, description, top_comment_flag, bottom_comment_flag, ship_to_company, ship_to_contact, ship_to_site, bill_to_company, bill_to_contact, bill_to_site, product_ids, document_ids, invoice_ids, config_ids, total, tax_total, currency, _info, custom_fields].hash
+      [id, company, contact, phone, phone_ext, email, site, status, opportunity, order_date, due_date, billing_terms, tax_code, po_number, location, department, business_unit_id, sales_rep, notes, bill_closed_flag, bill_shipped_flag, restrict_downpayment_flag, description, top_comment_flag, bottom_comment_flag, ship_to_company, ship_to_contact, ship_to_site, bill_to_company, bill_to_contact, bill_to_site, product_ids, document_ids, invoice_ids, config_ids, total, tax_total, currency, _info, custom_fields].hash
     end
 
     # Builds the object from hash
