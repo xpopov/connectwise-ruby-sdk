@@ -220,6 +220,10 @@ module ConnectWise
 
     attr_accessor :timebased_one_time_password_activated
 
+    attr_accessor :global_search_default_sort
+
+    attr_accessor :global_search_default_ticket_filter
+
     # Metadata of the entity
     attr_accessor :_info
 
@@ -355,6 +359,8 @@ module ConnectWise
         :'remote_package_account' => :'remotePackageAccount',
         :'authentication_service_type' => :'authenticationServiceType',
         :'timebased_one_time_password_activated' => :'timebasedOneTimePasswordActivated',
+        :'global_search_default_sort' => :'globalSearchDefaultSort',
+        :'global_search_default_ticket_filter' => :'globalSearchDefaultTicketFilter',
         :'_info' => :'_info'
       }
     end
@@ -469,6 +475,8 @@ module ConnectWise
         :'remote_package_account' => :'String',
         :'authentication_service_type' => :'String',
         :'timebased_one_time_password_activated' => :'BOOLEAN',
+        :'global_search_default_sort' => :'String',
+        :'global_search_default_ticket_filter' => :'String',
         :'_info' => :'Metadata'
       }
     end
@@ -913,6 +921,14 @@ module ConnectWise
 
       if attributes.has_key?(:'timebasedOneTimePasswordActivated')
         self.timebased_one_time_password_activated = attributes[:'timebasedOneTimePasswordActivated']
+      end
+
+      if attributes.has_key?(:'globalSearchDefaultSort')
+        self.global_search_default_sort = attributes[:'globalSearchDefaultSort']
+      end
+
+      if attributes.has_key?(:'globalSearchDefaultTicketFilter')
+        self.global_search_default_ticket_filter = attributes[:'globalSearchDefaultTicketFilter']
       end
 
       if attributes.has_key?(:'_info')
@@ -1637,6 +1653,8 @@ module ConnectWise
           remote_package_account == o.remote_package_account &&
           authentication_service_type == o.authentication_service_type &&
           timebased_one_time_password_activated == o.timebased_one_time_password_activated &&
+          global_search_default_sort == o.global_search_default_sort &&
+          global_search_default_ticket_filter == o.global_search_default_ticket_filter &&
           _info == o._info
     end
 
@@ -1649,7 +1667,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, identifier, password, first_name, middle_initial, last_name, title, report_card, license_class, disable_online_flag, enable_mobile_flag, type, employee_identifer, vendor_number, notes, time_zone, country, service_board_team_ids, enable_mobile_gps_flag, inactive_date, inactive_flag, last_login, photo, office_email, office_phone, office_extension, mobile_email, mobile_phone, mobile_extension, home_email, home_phone, home_extension, default_email, default_phone, security_role, admin_flag, structure_level, security_location, default_location, default_department, reports_to, restrict_location_flag, restrict_department_flag, work_role, work_type, time_approver, expense_approver, billable_forecast, daily_capacity, hourly_cost, hourly_rate, include_in_utilization_reporting_flag, require_expense_entry_flag, require_time_sheet_entry_flag, require_start_and_end_time_on_time_entry_flag, allow_in_cell_entry_on_time_sheet, enter_time_against_company_flag, allow_expenses_entered_against_companies_flag, time_reminder_email_flag, days_tolerance, minimum_hours, time_sheet_start_date, hire_date, service_default_location, service_default_department, service_default_board, restrict_service_default_location_flag, restrict_service_default_department_flag, excluded_service_board_ids, project_default_location, project_default_department, project_default_board, restrict_project_default_location_flag, restrict_project_default_department_flag, excluded_project_board_ids, schedule_default_location, schedule_default_department, schedule_capacity, service_location, restrict_schedule_flag, hide_member_in_dispatch_portal_flag, calendar, sales_default_location, restrict_default_sales_territory_flag, warehouse, warehouse_bin, restrict_default_warehouse_flag, restrict_default_warehouse_bin_flag, mapi_name, calendar_sync_integration_flag, enable_ldap_authentication_flag, ldap_configuration, ldap_user_name, company_activity_tab_format, invoice_time_tab_format, invoice_screen_default_tab_format, invoicing_display_options, agreement_invoicing_display_options, corelytics_username, corelytics_password, remote_package, remote_package_platform, remote_package_user_name, remote_package_password, remote_package_account, authentication_service_type, timebased_one_time_password_activated, _info].hash
+      [id, identifier, password, first_name, middle_initial, last_name, title, report_card, license_class, disable_online_flag, enable_mobile_flag, type, employee_identifer, vendor_number, notes, time_zone, country, service_board_team_ids, enable_mobile_gps_flag, inactive_date, inactive_flag, last_login, photo, office_email, office_phone, office_extension, mobile_email, mobile_phone, mobile_extension, home_email, home_phone, home_extension, default_email, default_phone, security_role, admin_flag, structure_level, security_location, default_location, default_department, reports_to, restrict_location_flag, restrict_department_flag, work_role, work_type, time_approver, expense_approver, billable_forecast, daily_capacity, hourly_cost, hourly_rate, include_in_utilization_reporting_flag, require_expense_entry_flag, require_time_sheet_entry_flag, require_start_and_end_time_on_time_entry_flag, allow_in_cell_entry_on_time_sheet, enter_time_against_company_flag, allow_expenses_entered_against_companies_flag, time_reminder_email_flag, days_tolerance, minimum_hours, time_sheet_start_date, hire_date, service_default_location, service_default_department, service_default_board, restrict_service_default_location_flag, restrict_service_default_department_flag, excluded_service_board_ids, project_default_location, project_default_department, project_default_board, restrict_project_default_location_flag, restrict_project_default_department_flag, excluded_project_board_ids, schedule_default_location, schedule_default_department, schedule_capacity, service_location, restrict_schedule_flag, hide_member_in_dispatch_portal_flag, calendar, sales_default_location, restrict_default_sales_territory_flag, warehouse, warehouse_bin, restrict_default_warehouse_flag, restrict_default_warehouse_bin_flag, mapi_name, calendar_sync_integration_flag, enable_ldap_authentication_flag, ldap_configuration, ldap_user_name, company_activity_tab_format, invoice_time_tab_format, invoice_screen_default_tab_format, invoicing_display_options, agreement_invoicing_display_options, corelytics_username, corelytics_password, remote_package, remote_package_platform, remote_package_user_name, remote_package_password, remote_package_account, authentication_service_type, timebased_one_time_password_activated, global_search_default_sort, global_search_default_ticket_filter, _info].hash
     end
 
     # Builds the object from hash
