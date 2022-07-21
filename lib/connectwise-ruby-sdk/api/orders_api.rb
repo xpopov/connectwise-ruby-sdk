@@ -97,6 +97,7 @@ module ConnectWise
       # query parameters
       query_params = {}
       query_params[:'conditions'] = opts[:'conditions'] if !opts[:'conditions'].nil?
+      query_params[:'fields'] = opts[:'fields'].join(',') if !opts[:'fields'].nil?
       query_params[:'orderBy'] = opts[:'order_by'] if !opts[:'order_by'].nil?
       query_params[:'childconditions'] = opts[:'childconditions'] if !opts[:'childconditions'].nil?
       query_params[:'customfieldconditions'] = opts[:'customfieldconditions'] if !opts[:'customfieldconditions'].nil?
