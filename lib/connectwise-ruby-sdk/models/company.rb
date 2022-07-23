@@ -559,7 +559,7 @@ module ConnectWise
         invalid_properties.push("invalid value for 'identifier', identifier cannot be nil.")
       end
 
-      if @identifier.to_s.length > 25
+      if @identifier.to_s.length > 50
         invalid_properties.push("invalid value for 'identifier', the character length must be smaller than or equal to 25.")
       end
 
