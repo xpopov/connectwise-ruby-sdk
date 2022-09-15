@@ -298,7 +298,7 @@ module ConnectWise
     # @return [nil]
     def finance_invoices_id_pdf_get(id, opts = {})
       finance_invoices_id_pdf_get_with_http_info(id, opts)
-      return nil
+      # return nil
     end
 
     # 
@@ -336,7 +336,8 @@ module ConnectWise
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
-        :auth_names => auth_names)
+        :auth_names => auth_names,
+        :return_type => 'File')
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: InvoicesApi#finance_invoices_id_pdf_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
