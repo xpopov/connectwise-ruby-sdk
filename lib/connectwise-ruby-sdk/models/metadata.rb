@@ -5,15 +5,19 @@ module ConnectWise
   # Metadata of the entity
   class Metadata
 
+    attr_accessor :last_updated
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'last_updated' => :'lastUpdated',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'last_updated' => :'DateTime',
       }
     end
 
@@ -25,6 +29,9 @@ module ConnectWise
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
+      if attributes.has_key?(:'lastUpdated')
+        self.last_updated = attributes[:'lastUpdated']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -56,7 +63,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [].hash
+      [last_updated].hash
     end
 
     # Builds the object from hash
