@@ -15,8 +15,8 @@ module ConnectWise
     # @param info_id 
     # @param [Hash] opts the optional parameters
     # @return [Info]
-    def finance_invoices_id_infos_info_id_get(id, info_id, opts = {})
-      data, _status_code, _headers = finance_invoices_id_infos_info_id_get_with_http_info(id, info_id, opts)
+    def finance_invoices_id_infos_info_id_get(id, opts = {})
+      data, _status_code, _headers = finance_invoices_id_infos_info_id_get_with_http_info(id, opts)
       return data
     end
 
@@ -26,7 +26,7 @@ module ConnectWise
     # @param info_id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(Info, Fixnum, Hash)>] Info data, response status code and response headers
-    def finance_invoices_id_infos_info_id_get_with_http_info(id, info_id, opts = {})
+    def finance_invoices_id_infos_info_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: InvoiceInfosApi.finance_invoices_id_infos_info_id_get ..."
       end
@@ -39,7 +39,7 @@ module ConnectWise
         fail ArgumentError, "Missing the required parameter 'info_id' when calling InvoiceInfosApi.finance_invoices_id_infos_info_id_get"
       end
       # resource path
-      local_var_path = "/finance/invoices/{id}/infos/{infoId}".sub('{' + 'id' + '}', id.to_s).sub('{' + 'infoId' + '}', info_id.to_s)
+      local_var_path = "/finance/info/invoice/{id}".sub('{' + 'id' + '}', id.to_s)
 
       # query parameters
       query_params = {}
