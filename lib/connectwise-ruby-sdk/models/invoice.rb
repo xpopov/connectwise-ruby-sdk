@@ -26,6 +26,8 @@ module ConnectWise
 
     attr_accessor :billing_site
 
+    attr_accessor :billing_site_zip
+
     attr_accessor :shipping_site
 
     attr_accessor :billing_terms
@@ -144,6 +146,7 @@ module ConnectWise
         :'apply_to_id' => :'applyToId',
         :'attention' => :'attention',
         :'billing_site' => :'billingSite',
+        :'billing_site_zip' => :'billingSiteZip',
         :'shipping_site' => :'shippingSite',
         :'billing_terms' => :'billingTerms',
         :'reference' => :'reference',
@@ -200,6 +203,7 @@ module ConnectWise
         :'apply_to_id' => :'Integer',
         :'attention' => :'String',
         :'billing_site' => :'SiteReference',
+        :'billing_site_zip' => :'String',
         :'shipping_site' => :'SiteReference',
         :'billing_terms' => :'BillingTermsReference',
         :'reference' => :'String',
@@ -292,6 +296,10 @@ module ConnectWise
 
       if attributes.has_key?(:'billingSite')
         self.billing_site = attributes[:'billingSite']
+      end
+
+      if attributes.has_key?(:'billingSiteZip')
+        self.billing_site_zip = attributes[:'billingSiteZip']
       end
 
       if attributes.has_key?(:'shippingSite')
@@ -581,6 +589,7 @@ module ConnectWise
           apply_to_id == o.apply_to_id &&
           attention == o.attention &&
           billing_site == o.billing_site &&
+          billing_site_zip == o.billing_site_zip &&
           shipping_site == o.shipping_site &&
           billing_terms == o.billing_terms &&
           reference == o.reference &&
@@ -631,7 +640,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, invoice_number, type, status, company, bill_to_company, ship_to_company, apply_to_type, apply_to_id, attention, billing_site, shipping_site, billing_terms, reference, customer_po, template_setup_id, email_template_id, add_to_batch_email_list, date, restrict_downpayment_flag, location_id, department_id, territory_id, top_comment, bottom_comment, taxable_flag, tax_code, internal_notes, downpayment_previously_taxed_flag, service_total, currency, due_date, expense_total, product_total, previous_progress_applied, service_adjustment_amount, agreement_amount, downpayment_applied, subtotal, total, remaining_downpayment, sales_tax, adjustment_reason, adjusted_by, payments, credits, balance, special_invoice_flag, custom_fields, _info].hash
+      [id, invoice_number, type, status, company, bill_to_company, ship_to_company, apply_to_type, apply_to_id, attention, billing_site, billing_site_zip, shipping_site, billing_terms, reference, customer_po, template_setup_id, email_template_id, add_to_batch_email_list, date, restrict_downpayment_flag, location_id, department_id, territory_id, top_comment, bottom_comment, taxable_flag, tax_code, internal_notes, downpayment_previously_taxed_flag, service_total, currency, due_date, expense_total, product_total, previous_progress_applied, service_adjustment_amount, agreement_amount, downpayment_applied, subtotal, total, remaining_downpayment, sales_tax, adjustment_reason, adjusted_by, payments, credits, balance, special_invoice_flag, custom_fields, _info].hash
     end
 
     # Builds the object from hash
