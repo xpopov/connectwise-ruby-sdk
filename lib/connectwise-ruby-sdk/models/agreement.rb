@@ -645,7 +645,7 @@ module ConnectWise
         invalid_properties.push("invalid value for 'customer_po', the character length must be smaller than or equal to 50.")
       end
 
-      if !@reason_cancelled.nil? && @reason_cancelled.to_s.length > 50
+      if !@reason_cancelled.nil? && @reason_cancelled.to_s.length > 500
         invalid_properties.push("invalid value for 'reason_cancelled', the character length must be smaller than or equal to 50.")
       end
 
