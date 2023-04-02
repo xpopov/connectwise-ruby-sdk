@@ -669,7 +669,7 @@ module ConnectWise
       return false if @company.nil?
       return false if @contact.nil?
       return false if !@customer_po.nil? && @customer_po.to_s.length > 50
-      return false if !@reason_cancelled.nil? && @reason_cancelled.to_s.length > 50
+      return false if !@reason_cancelled.nil? && @reason_cancelled.to_s.length > 500
       return false if !@work_order.nil? && @work_order.to_s.length > 20
       return false if !@internal_notes.nil? && @internal_notes.to_s.length > 5000
       application_units_validator = EnumAttributeValidator.new('String', ["Amount", "Hours", "Incidents"])
@@ -722,7 +722,7 @@ module ConnectWise
     # @param [Object] reason_cancelled Value to be assigned
     def reason_cancelled=(reason_cancelled)
 
-      if !reason_cancelled.nil? && reason_cancelled.to_s.length > 50
+      if !reason_cancelled.nil? && reason_cancelled.to_s.length > 500
         fail ArgumentError, "invalid value for 'reason_cancelled', the character length must be smaller than or equal to 50."
       end
 
