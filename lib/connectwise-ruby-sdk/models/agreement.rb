@@ -90,11 +90,11 @@ module ConnectWise
 
     attr_accessor :comp_limit_amount
 
-    attr_accessor :bill_cycle_id
+    attr_accessor :billing_cycle
 
     attr_accessor :bill_one_time_flag
 
-    attr_accessor :bill_terms_id
+    attr_accessor :billing_terms
 
     attr_accessor :invoicing_cycle
 
@@ -217,9 +217,9 @@ module ConnectWise
         :'employee_comp_not_exceed' => :'employeeCompNotExceed',
         :'comp_hourly_rate' => :'compHourlyRate',
         :'comp_limit_amount' => :'compLimitAmount',
-        :'bill_cycle_id' => :'billCycleId',
+        :'billing_cycle' => :'billingCycle',
         :'bill_one_time_flag' => :'billOneTimeFlag',
-        :'bill_terms_id' => :'billTermsId',
+        :'billing_terms' => :'billingTerms',
         :'invoicing_cycle' => :'invoicingCycle',
         :'bill_to_company' => :'billToCompany',
         :'bill_to_site' => :'billToSite',
@@ -295,9 +295,9 @@ module ConnectWise
         :'employee_comp_not_exceed' => :'String',
         :'comp_hourly_rate' => :'Float',
         :'comp_limit_amount' => :'Float',
-        :'bill_cycle_id' => :'Integer',
+        :'billing_cycle' => :'BillingCycleReference',
         :'bill_one_time_flag' => :'BOOLEAN',
-        :'bill_terms_id' => :'Integer',
+        :'billing_terms' => :'BillingTermsReference',
         :'invoicing_cycle' => :'String',
         :'bill_to_company' => :'CompanyReference',
         :'bill_to_site' => :'SiteReference',
@@ -507,16 +507,16 @@ module ConnectWise
         self.comp_limit_amount = attributes[:'compLimitAmount']
       end
 
-      if attributes.has_key?(:'billCycleId')
-        self.bill_cycle_id = attributes[:'billCycleId']
+      if attributes.has_key?(:'billingCycle')
+        self.billing_cycle = attributes[:'billingCycle']
       end
 
       if attributes.has_key?(:'billOneTimeFlag')
         self.bill_one_time_flag = attributes[:'billOneTimeFlag']
       end
 
-      if attributes.has_key?(:'billTermsId')
-        self.bill_terms_id = attributes[:'billTermsId']
+      if attributes.has_key?(:'billingTerms')
+        self.billing_terms = attributes[:'billingTerms']
       end
 
       if attributes.has_key?(:'invoicingCycle')
@@ -907,9 +907,9 @@ module ConnectWise
           employee_comp_not_exceed == o.employee_comp_not_exceed &&
           comp_hourly_rate == o.comp_hourly_rate &&
           comp_limit_amount == o.comp_limit_amount &&
-          bill_cycle_id == o.bill_cycle_id &&
+          billing_cycle == o.billing_cycle &&
           bill_one_time_flag == o.bill_one_time_flag &&
-          bill_terms_id == o.bill_terms_id &&
+          billing_terms == o.billing_terms &&
           invoicing_cycle == o.invoicing_cycle &&
           bill_to_company == o.bill_to_company &&
           bill_to_site == o.bill_to_site &&
@@ -947,7 +947,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, bill_cycle_id, bill_one_time_flag, bill_terms_id, invoicing_cycle, bill_to_company, bill_to_site, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, _info].hash
+      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, billing_cycle, bill_one_time_flag, billing_terms, invoicing_cycle, bill_to_company, bill_to_site, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, _info].hash
     end
 
     # Builds the object from hash
