@@ -102,6 +102,8 @@ module ConnectWise
 
     attr_accessor :bill_to_site
 
+    attr_accessor :bill_to_contact
+
     attr_accessor :bill_amount
 
     attr_accessor :taxable
@@ -223,6 +225,7 @@ module ConnectWise
         :'invoicing_cycle' => :'invoicingCycle',
         :'bill_to_company' => :'billToCompany',
         :'bill_to_site' => :'billToSite',
+        :'bill_to_contact' => :'billToContact',
         :'bill_amount' => :'billAmount',
         :'taxable' => :'taxable',
         :'prorate_first_bill' => :'prorateFirstBill',
@@ -301,6 +304,7 @@ module ConnectWise
         :'invoicing_cycle' => :'String',
         :'bill_to_company' => :'CompanyReference',
         :'bill_to_site' => :'SiteReference',
+        :'bill_to_contact' => :'ContactReference',
         :'bill_amount' => :'Float',
         :'taxable' => :'BOOLEAN',
         :'prorate_first_bill' => :'Float',
@@ -530,6 +534,11 @@ module ConnectWise
       if attributes.has_key?(:'billToSite')
         self.bill_to_site = attributes[:'billToSite']
       end
+
+      if attributes.has_key?(:'billToContact')
+        self.bill_to_contact = attributes[:'billToContact']
+      end
+
 
       if attributes.has_key?(:'billAmount')
         self.bill_amount = attributes[:'billAmount']
@@ -913,6 +922,7 @@ module ConnectWise
           invoicing_cycle == o.invoicing_cycle &&
           bill_to_company == o.bill_to_company &&
           bill_to_site == o.bill_to_site &&
+          bill_to_contact == o.bill_to_contact &&
           bill_amount == o.bill_amount &&
           taxable == o.taxable &&
           prorate_first_bill == o.prorate_first_bill &&
@@ -947,7 +957,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, billing_cycle, bill_one_time_flag, billing_terms, invoicing_cycle, bill_to_company, bill_to_site, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, _info].hash
+      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, billing_cycle, bill_one_time_flag, billing_terms, invoicing_cycle, bill_to_company, bill_to_site, bill_to_contact, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, _info].hash
     end
 
     # Builds the object from hash
