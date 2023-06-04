@@ -150,6 +150,8 @@ module ConnectWise
 
     attr_accessor :site
 
+    attr_accessor :agreement_status
+
     # Metadata of the entity
     attr_accessor :_info
 
@@ -251,6 +253,7 @@ module ConnectWise
         :'currency' => :'currency',
         :'period_type' => :'periodType',
         :'site' => :'site',
+        :'agreement_status' => :'agreementStatus',
         :'_info' => :'_info'
       }
     end
@@ -331,6 +334,7 @@ module ConnectWise
         :'currency' => :'CurrencyReference',
         :'period_type' => :'String',
         :'site' => :'SiteReference',
+        :'agreement_status' => :'String',
         :'_info' => :'Metadata'
       }
     end
@@ -634,6 +638,10 @@ module ConnectWise
 
       if attributes.has_key?(:'site')
         self.site = attributes[:'site']
+      end
+
+      if attributes.has_key?(:'agreementStatus')
+        self.agreement_status = attributes[:'agreementStatus']
       end
 
       if attributes.has_key?(:'_info')
@@ -954,6 +962,7 @@ module ConnectWise
           currency == o.currency &&
           period_type == o.period_type &&
           site == o.site &&
+          agreement_status == o.agreement_status &&
           _info == o._info
     end
 
@@ -966,7 +975,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, billing_cycle, bill_one_time_flag, billing_terms, invoicing_cycle, bill_to_company, bill_to_site, bill_to_contact, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, site, _info].hash
+      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, billing_cycle, bill_one_time_flag, billing_terms, invoicing_cycle, bill_to_company, bill_to_site, bill_to_contact, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, site, agreement_status, _info].hash
     end
 
     # Builds the object from hash
