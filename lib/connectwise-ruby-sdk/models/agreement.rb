@@ -118,6 +118,8 @@ module ConnectWise
 
     attr_accessor :prorate_flag
 
+    attr_accessor :invoice_prorated_additions_flag
+
     attr_accessor :invoice_description
 
     attr_accessor :top_comment
@@ -237,6 +239,7 @@ module ConnectWise
         :'tax_code_id' => :'taxCodeId',
         :'restrict_down_payment' => :'restrictDownPayment',
         :'prorate_flag' => :'prorateFlag',
+        :'invoice_prorated_additions_flag' => :'invoiceProratedAdditionsFlag',
         :'invoice_description' => :'invoiceDescription',
         :'top_comment' => :'topComment',
         :'bottom_comment' => :'bottomComment',
@@ -318,6 +321,7 @@ module ConnectWise
         :'tax_code_id' => :'Integer',
         :'restrict_down_payment' => :'BOOLEAN',
         :'prorate_flag' => :'BOOLEAN',
+        :'invoice_prorated_additions_flag' => :'BOOLEAN',
         :'invoice_description' => :'String',
         :'top_comment' => :'BOOLEAN',
         :'bottom_comment' => :'BOOLEAN',
@@ -574,6 +578,10 @@ module ConnectWise
 
       if attributes.has_key?(:'prorateFlag')
         self.prorate_flag = attributes[:'prorateFlag']
+      end
+
+      if attributes.has_key?(:'invoiceProratedAdditionsFlag')
+        self.invoice_prorated_additions_flag = attributes[:'invoiceProratedAdditionsFlag']
       end
 
       if attributes.has_key?(:'invoiceDescription')
@@ -946,6 +954,7 @@ module ConnectWise
           tax_code_id == o.tax_code_id &&
           restrict_down_payment == o.restrict_down_payment &&
           prorate_flag == o.prorate_flag &&
+          invoice_prorated_additions_flag == o.invoice_prorated_additions_flag &&
           invoice_description == o.invoice_description &&
           top_comment == o.top_comment &&
           bottom_comment == o.bottom_comment &&
@@ -975,7 +984,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, billing_cycle, bill_one_time_flag, billing_terms, invoicing_cycle, bill_to_company, bill_to_site, bill_to_contact, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, site, agreement_status, _info].hash
+      [id, name, type, company, contact, sub_contract_company, sub_contract_contact, parent_agreement_id, customer_po, location, department, business_unit_id, restrict_location_flag, restrict_department_flag, start_date, end_date, no_ending_date_flag, opportunity, cancelled_flag, date_cancelled, reason_cancelled, sla_id, work_order, internal_notes, application_units, application_limit, application_cycle, application_unlimited_flag, one_time_flag, cover_agreement_time, cover_agreement_product, cover_agreement_expense, cover_sales_tax, carry_over_unused, allow_overruns, expired_days, limit, expire_when_zero, charge_to_firm, employee_comp_rate, employee_comp_not_exceed, comp_hourly_rate, comp_limit_amount, billing_cycle, bill_one_time_flag, billing_terms, invoicing_cycle, bill_to_company, bill_to_site, bill_to_contact, bill_amount, taxable, prorate_first_bill, bill_start_date, tax_code_id, restrict_down_payment, prorate_flag, invoice_prorated_additions_flag, invoice_description, top_comment, bottom_comment, work_role, work_type, project_type_id, invoice_template_setup_id, bill_time, bill_expenses, bill_products, billable_time_invoice, billable_expense_invoice, billable_product_invoice, currency, period_type, site, agreement_status, _info].hash
     end
 
     # Builds the object from hash
