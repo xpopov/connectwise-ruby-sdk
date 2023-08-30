@@ -14,8 +14,8 @@ module ConnectWise
     # @param [Hash] opts the optional parameters
     # @option opts [String] :conditions 
     # @return [Count]
-    def system_billing_statuses_count_get(opts = {})
-      data, _status_code, _headers = system_billing_statuses_count_get_with_http_info(opts)
+    def finance_billing_statuses_count_get(opts = {})
+      data, _status_code, _headers = finance_billing_statuses_count_get_with_http_info(opts)
       return data
     end
 
@@ -24,12 +24,12 @@ module ConnectWise
     # @param [Hash] opts the optional parameters
     # @option opts [String] :conditions 
     # @return [Array<(Count, Fixnum, Hash)>] Count data, response status code and response headers
-    def system_billing_statuses_count_get_with_http_info(opts = {})
+    def finance_billing_statuses_count_get_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: BillingStatusesApi.system_billing_statuses_count_get ..."
+        @api_client.config.logger.debug "Calling API: BillingStatusesApi.finance_billing_statuses_count_get ..."
       end
       # resource path
-      local_var_path = "/system/billingStatuses/count"
+      local_var_path = "/finance/billingStatuses/count"
 
       # query parameters
       query_params = {}
@@ -54,7 +54,7 @@ module ConnectWise
         :auth_names => auth_names,
         :return_type => 'Count')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BillingStatusesApi#system_billing_statuses_count_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BillingStatusesApi#finance_billing_statuses_count_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -69,8 +69,8 @@ module ConnectWise
     # @option opts [Integer] :page 
     # @option opts [Integer] :page_size 
     # @return [Array<BillingStatus>]
-    def system_billing_statuses_get(opts = {})
-      data, _status_code, _headers = system_billing_statuses_get_with_http_info(opts)
+    def finance_billing_statuses_get(opts = {})
+      data, _status_code, _headers = finance_billing_statuses_get_with_http_info(opts)
       return data
     end
 
@@ -84,12 +84,12 @@ module ConnectWise
     # @option opts [Integer] :page 
     # @option opts [Integer] :page_size 
     # @return [Array<(Array<BillingStatus>, Fixnum, Hash)>] Array<BillingStatus> data, response status code and response headers
-    def system_billing_statuses_get_with_http_info(opts = {})
+    def finance_billing_statuses_get_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: BillingStatusesApi.system_billing_statuses_get ..."
+        @api_client.config.logger.debug "Calling API: BillingStatusesApi.finance_billing_statuses_get ..."
       end
       # resource path
-      local_var_path = "/system/billingStatuses"
+      local_var_path = "/finance/billingStatuses"
 
       # query parameters
       query_params = {}
@@ -119,7 +119,7 @@ module ConnectWise
         :auth_names => auth_names,
         :return_type => 'Array<BillingStatus>')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BillingStatusesApi#system_billing_statuses_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BillingStatusesApi#finance_billing_statuses_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -129,8 +129,8 @@ module ConnectWise
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [BillingStatus]
-    def system_billing_statuses_id_get(id, opts = {})
-      data, _status_code, _headers = system_billing_statuses_id_get_with_http_info(id, opts)
+    def finance_billing_statuses_id_get(id, opts = {})
+      data, _status_code, _headers = finance_billing_statuses_id_get_with_http_info(id, opts)
       return data
     end
 
@@ -139,16 +139,16 @@ module ConnectWise
     # @param id 
     # @param [Hash] opts the optional parameters
     # @return [Array<(BillingStatus, Fixnum, Hash)>] BillingStatus data, response status code and response headers
-    def system_billing_statuses_id_get_with_http_info(id, opts = {})
+    def finance_billing_statuses_id_get_with_http_info(id, opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: BillingStatusesApi.system_billing_statuses_id_get ..."
+        @api_client.config.logger.debug "Calling API: BillingStatusesApi.finance_billing_statuses_id_get ..."
       end
       # verify the required parameter 'id' is set
       if @api_client.config.client_side_validation && id.nil?
-        fail ArgumentError, "Missing the required parameter 'id' when calling BillingStatusesApi.system_billing_statuses_id_get"
+        fail ArgumentError, "Missing the required parameter 'id' when calling BillingStatusesApi.finance_billing_statuses_id_get"
       end
       # resource path
-      local_var_path = "/system/billingStatuses/{id}".sub('{' + 'id' + '}', id.to_s)
+      local_var_path = "/finance/billingStatuses/{id}".sub('{' + 'id' + '}', id.to_s)
 
       # query parameters
       query_params = {}
@@ -172,7 +172,7 @@ module ConnectWise
         :auth_names => auth_names,
         :return_type => 'BillingStatus')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: BillingStatusesApi#system_billing_statuses_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: BillingStatusesApi#finance_billing_statuses_id_get\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
