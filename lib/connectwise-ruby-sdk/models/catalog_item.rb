@@ -55,6 +55,8 @@ module ConnectWise
 
     attr_accessor :category
 
+    attr_accessor :billable_option
+
     # Metadata of the entity
     attr_accessor :_info
 
@@ -110,6 +112,7 @@ module ConnectWise
         :'integration_x_ref' => :'integrationXRef',
         :'date_entered' => :'dateEntered',
         :'category' => :'category',
+        :'billable_option' => :'billableOption',
         :'_info' => :'_info',
         :'custom_fields' => :'customFields'
       }
@@ -143,6 +146,7 @@ module ConnectWise
         :'integration_x_ref' => :'String',
         :'date_entered' => :'String',
         :'category' => :'ProductCategoryReference',
+        :'billable_option' => :'String',
         :'_info' => :'Metadata',
         :'custom_fields' => :'Array<CustomFieldValue>'
       }
@@ -254,6 +258,10 @@ module ConnectWise
 
       if attributes.has_key?(:'category')
         self.category = attributes[:'category']
+      end
+
+      if attributes.has_key?(:'billableOption')
+        self.billable_option = attributes[:'billableOption']
       end
 
       if attributes.has_key?(:'_info')
@@ -465,6 +473,7 @@ module ConnectWise
           integration_x_ref == o.integration_x_ref &&
           date_entered == o.date_entered &&
           category == o.category &&
+          billable_option == o.billable_option &&
           _info == o._info &&
           custom_fields == o.custom_fields
     end
@@ -478,7 +487,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, identifier, description, inactive_flag, subcategory, type, product_class, serialized_flag, serialized_cost_flag, phase_product_flag, unit_of_measure, min_stock_level, price, cost, price_attribute, taxable_flag, customer_description, manufacturer, manufacturer_part_number, vendor, vendor_sku, notes, integration_x_ref, date_entered, category, _info, custom_fields].hash
+      [id, identifier, description, inactive_flag, subcategory, type, product_class, serialized_flag, serialized_cost_flag, phase_product_flag, unit_of_measure, min_stock_level, price, cost, price_attribute, taxable_flag, customer_description, manufacturer, manufacturer_part_number, vendor, vendor_sku, notes, integration_x_ref, date_entered, category, billable_option, _info, custom_fields].hash
     end
 
     # Builds the object from hash
