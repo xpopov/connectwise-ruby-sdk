@@ -66,6 +66,8 @@ module ConnectWise
 
     attr_accessor :sla
 
+    attr_accessor :sales_order
+
     attr_accessor :invoice
 
     attr_accessor :entity_type
@@ -155,6 +157,7 @@ module ConnectWise
         :'sub_contractor_amount_limit' => :'subContractorAmountLimit',
         :'recurring' => :'recurring',
         :'sla' => :'sla',
+        :'sales_order' => :'salesOrder',
         :'invoice' => :'invoice',
         :'entity_type' => :'entityType',
         :'forecast_detail_id' => :'forecastDetailId',
@@ -208,6 +211,7 @@ module ConnectWise
         :'sub_contractor_amount_limit' => :'Float',
         :'recurring' => :'ProductRecurring',
         :'sla' => :'SLAReference',
+        :'sales_order' => :'OrderReference',
         :'invoice' => :'InvoiceReference',
         :'entity_type' => :'EntityTypeReference',
         :'forecast_detail_id' => :'Integer',
@@ -357,6 +361,10 @@ module ConnectWise
 
       if attributes.has_key?(:'sla')
         self.sla = attributes[:'sla']
+      end
+
+      if attributes.has_key?(:'salesOrder')
+        self.sales_order = attributes[:'salesOrder']
       end
 
       if attributes.has_key?(:'invoice')
@@ -614,6 +622,7 @@ module ConnectWise
           sub_contractor_amount_limit == o.sub_contractor_amount_limit &&
           recurring == o.recurring &&
           sla == o.sla &&
+          sales_order == o.sales_order &&
           invoice == o.invoice &&
           entity_type == o.entity_type &&
           forecast_detail_id == o.forecast_detail_id &&
@@ -641,7 +650,7 @@ module ConnectWise
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, catalog_item, charge_to_id, charge_to_type, description, sequence_number, quantity, price, cost, discount, price_method, billable_option, agreement, location_id, business_unit_id, vendor, vendor_sku, taxable_flag, dropship_flag, special_order_flag, phase_product_flag, cancelled_flag, quantity_cancelled, cancelled_reason, customer_description, internal_notes, product_supplied_flag, sub_contractor_ship_to_id, sub_contractor_amount_limit, recurring, sla, invoice, entity_type, forecast_detail_id, cancelled_by, cancelled_date, warehouse, warehouse_bin, purchase_date, integration_x_ref, list_price, serial_number_ids, company, forecast_status, _info, bypass_forecast_update, custom_fields].hash
+      [id, catalog_item, charge_to_id, charge_to_type, description, sequence_number, quantity, price, cost, discount, price_method, billable_option, agreement, location_id, business_unit_id, vendor, vendor_sku, taxable_flag, dropship_flag, special_order_flag, phase_product_flag, cancelled_flag, quantity_cancelled, cancelled_reason, customer_description, internal_notes, product_supplied_flag, sub_contractor_ship_to_id, sub_contractor_amount_limit, recurring, sla, sales_order, invoice, entity_type, forecast_detail_id, cancelled_by, cancelled_date, warehouse, warehouse_bin, purchase_date, integration_x_ref, list_price, serial_number_ids, company, forecast_status, _info, bypass_forecast_update, custom_fields].hash
     end
 
     # Builds the object from hash
